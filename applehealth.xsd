@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="HealthData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ExportDate" type="ExportDateType"/>
+        <xs:element name="Me" type="MeType"/>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="Record" type="RecordType"/>
+          <xs:element name="Workout" type="WorkoutType"/>
+          <xs:element name="ActivitySummary" type="ActivitySummaryType"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attribute name="locale" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="ExportDateType">
+    <xs:attribute name="value" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="MeType">
+    <xs:attribute name="dateOfBirth" type="xs:date"/>
+    <xs:attribute name="biologicalSex" type="xs:string"/>
+    <xs:attribute name="bloodType" type="xs:string"/>
+    <xs:attribute name="fitzpatrickSkinType" type="xs:string"/>
+    <xs:attribute name="handPreference" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="RecordType">
+    <xs:sequence>
+      <xs:element name="MetadataEntry" type="MetadataEntryType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="type" type="xs:string" use="required"/>
+    <xs:attribute name="sourceName" type="xs:string"/>
+    <xs:attribute name="sourceVersion" type="xs:string"/>
+    <xs:attribute name="device" type="xs:string"/>
+    <xs:attribute name="unit" type="xs:string"/>
+    <xs:attribute name="creationDate" type="xs:string"/>
+    <xs:attribute name="startDate" type="xs:string"/>
+    <xs:attribute name="endDate" type="xs:string"/>
+    <xs:attribute name="value" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="MetadataEntryType">
+    <xs:attribute name="key" type="xs:string" use="required"/>
+    <xs:attribute name="value" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="WorkoutType">
+    <xs:sequence>
+      <xs:element name="WorkoutEvent" type="WorkoutEventType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="workoutActivityType" type="xs:string"/>
+    <xs:attribute name="duration" type="xs:decimal"/>
+    <xs:attribute name="durationUnit" type="xs:string"/>
+    <xs:attribute name="totalDistance" type="xs:decimal"/>
+    <xs:attribute name="totalDistanceUnit" type="xs:string"/>
+    <xs:attribute name="totalEnergyBurned" type="xs:decimal"/>
+    <xs:attribute name="totalEnergyBurnedUnit" type="xs:string"/>
+    <xs:attribute name="creationDate" type="xs:string"/>
+    <xs:attribute name="startDate" type="xs:string"/>
+    <xs:attribute name="endDate" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="WorkoutEventType">
+    <xs:attribute name="type" type="xs:string"/>
+    <xs:attribute name="date" type="xs:string"/>
+    <xs:attribute name="duration" type="xs:decimal"/>
+  </xs:complexType>
+
+  <xs:complexType name="ActivitySummaryType">
+    <xs:attribute name="dateComponents" type="xs:date"/>
+    <xs:attribute name="activeEnergyBurned" type="xs:decimal"/>
+    <xs:attribute name="activeEnergyBurnedGoal" type="xs:decimal"/>
+    <xs:attribute name="activeEnergyBurnedUnit" type="xs:string"/>
+    <xs:attribute name="appleExerciseTime" type="xs:decimal"/>
+    <xs:attribute name="appleExerciseTimeGoal" type="xs:decimal"/>
+    <xs:attribute name="appleStandHours" type="xs:decimal"/>
+    <xs:attribute name="appleStandHoursGoal" type="xs:decimal"/>
+  </xs:complexType>
+
+</xs:schema>

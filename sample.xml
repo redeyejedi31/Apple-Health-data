@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HealthData locale="en_GB">
+  <ExportDate value="2026-06-25 15:30:00 +0100"/>
+  
+  <Me dateOfBirth="1990-01-01" 
+      biologicalSex="HKBiologicalSexNotSet" 
+      bloodType="HKBloodTypeNotSet" 
+      fitzpatrickSkinType="HKFitzpatrickSkinTypeNotSet" 
+      handPreference="HKHandPreferenceNotSet"/>
+
+  <Record type="HKQuantityTypeIdentifierHeartRate" 
+          sourceName="Apple Watch" 
+          sourceVersion="9.0.2" 
+          device="&lt;&lt;HKDevice: 0x790bbdec0&gt;, name:Apple Watch, manufacturer:Apple Inc., model:Watch, hardware:Watch6,4, software:9.0.2, creation date:2022-10-12 09:15:00 +0000&gt;" 
+          unit="count/min" 
+          creationDate="2026-06-25 09:15:00 +0100" 
+          startDate="2026-06-25 09:15:00 +0100" 
+          endDate="2026-06-25 09:15:00 +0100" 
+          value="89">
+    <MetadataEntry key="HKMetadataKeyHeartRateMotionContext" value="1"/>
+  </Record>
+
+  <Workout workoutActivityType="HKWorkoutActivityTypeWalking" 
+           duration="30.5" 
+           durationUnit="min" 
+           totalDistance="2.5" 
+           totalDistanceUnit="km" 
+           totalEnergyBurned="150.0" 
+           totalEnergyBurnedUnit="kcal" 
+           creationDate="2026-06-25 10:30:00 +0100" 
+           startDate="2026-06-25 10:00:00 +0100" 
+           endDate="2026-06-25 10:30:00 +0100">
+    <WorkoutEvent type="HKWorkoutEventTypePause" 
+                  date="2026-06-25 10:15:00 +0100" 
+                  duration="5.0"/>
+  </Workout>
+
+  <ActivitySummary dateComponents="2026-06-25" 
+                   activeEnergyBurned="400.0" 
+                   activeEnergyBurnedGoal="500.0" 
+                   activeEnergyBurnedUnit="kcal" 
+                   appleExerciseTime="30.0" 
+                   appleExerciseTimeGoal="30.0" 
+                   appleStandHours="10.0" 
+                   appleStandHoursGoal="12.0"/>
+</HealthData>
